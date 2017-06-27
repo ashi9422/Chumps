@@ -49,7 +49,7 @@ Router.put('/:id', (req, res) => {
     SupplierModel.update({_id:req.params.id}, {$set: details}).then(supplierupdate => {
         console.log("sulier updateeeeeeeeeeeeeee");
         console.log(req.body);
-        console.log(_id);
+        console.log(req.params.id);
         res.json(supplierupdate);
     }).catch(err => {
         console.error(err);

@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="phone" class="control-label col-md-3 col-sm-3 col-xs-12">Phone No <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="phone" class="form-control col-md-7 col-xs-12" type="text" name="phone" ng-model="phone" required="required">
+                    <input id="phone" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" title="Please enter valid Phone Number eg:7112321456" class="form-control col-md-7 col-xs-12" type="text" name="phone" ng-model="phone" required="required">
                 </div>
             </div>
             <div class="form-group">

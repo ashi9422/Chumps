@@ -32,27 +32,27 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="lastname" class="control-label col-md-3 col-sm-3 col-xs-12">Last Name </label>
+                <label for="lastname" class="control-label col-md-3 col-sm-3 col-xs-12">Last Name <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="lastname" class="form-control col-md-7 col-xs-12" type="text" name="lastname"   ng-model="supplierdataspecific.lastname" ng-value="fh">
+                    <input id="lastname" class="form-control col-md-7 col-xs-12" type="text" required="required" name="lastname"   ng-model="supplierdataspecific.lastname" ng-value="fh">
                 </div>
             </div>
             <div class="form-group">
-                <label for="phone" class="control-label col-md-3 col-sm-3 col-xs-12"> Phone </label>
+                <label for="phone" class="control-label col-md-3 col-sm-3 col-xs-12"> Phone <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="phone" class="form-control col-md-7 col-xs-12" type="text" name="phone"  ng-model="supplierdataspecific.phone">
+                    <input id="phone" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" title="Please enter valid Phone Number eg:7112321456" class="form-control col-md-7 col-xs-12" type="text" name="phone" required="required" ng-model="supplierdataspecific.phone">
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="email" class="form-control col-md-7 col-xs-12" type="email" name="email"  ng-model="supplierdataspecific.email" >
+                    <input id="email" class="form-control col-md-7 col-xs-12" type="email" name="email" required="required"  ng-model="supplierdataspecific.email" >
                 </div>
             </div>
             <div class="form-group">
-                <label for="address" class="control-label col-md-3 col-sm-3 col-xs-12">Address </label>
+                <label for="address" class="control-label col-md-3 col-sm-3 col-xs-12">Address <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="address" class="form-control col-md-7 col-xs-12" type="text" name="address" ng-model="supplierdataspecific.address" >
+                    <input id="address" class="form-control col-md-7 col-xs-12" type="text" name="address" required="required" ng-model="supplierdataspecific.address" >
                 </div>
             </div>
             <div class="ln_solid"></div>
