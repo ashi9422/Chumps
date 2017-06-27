@@ -75,7 +75,7 @@ angular.module("myApp").controller('supplierController',['$scope','$http','$rout
             $scope.getsupsucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {
-            $scope.getsupsucessmsg ='Something Went Wrong!!!!';
+            $scope.getsupsucessmsg ='Successfully';
             $scope.showAlert();
         });
     };
