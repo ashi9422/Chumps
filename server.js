@@ -26,7 +26,22 @@ mongoose.connect('mongodb://codechamps:codechamps123@ds129651.mlab.com:29651/cod
         console.log('connect to the database');
 }
 });
-app.use('/newsupplier', supplierRouter);
+
+////////////////////////////////////////////////////////////////////////////////
+//meka delete krnna epoo. meka mata test krnna daagatte - ashani
+// mongoose.connect('mongodb://localhost:27017/chumps', err => {
+//     if (err) {
+//         console.log(err);
+//         process.exit(1);
+//     }
+//     else
+//     {
+//         console.log("connected");
+//     }
+// });
+///////////////////////////////////////////////////////////////////////////////////
+
+app.use('/newsup', supplierRouter);
 
 app.use(express.static('public'));
 
