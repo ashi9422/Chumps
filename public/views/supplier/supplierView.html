@@ -6,6 +6,12 @@
         </div>
         <div class="x_content">
 
+
+            <div>
+                <label>Search: <input ng-model="searchText" class="col-lg-pull-6" ></label>
+            </div>
+            <br>
+
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -19,8 +25,10 @@
 
                 </tr>
                 </thead>
+
                 <tbody>
-                <tr ng-repeat="supdata in supplierdata">
+
+                <tr ng-repeat="supdata in supplierdata  | filter:searchText">
 
                     <td>{{supdata.firstname}}</td>
                     <td>{{supdata.lastname}}</td>
