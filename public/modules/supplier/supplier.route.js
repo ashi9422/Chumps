@@ -14,8 +14,8 @@ const SupplierModel = mongoose.model('Supplier');
 const Router = express.Router();
 
 Router.get('/', (req, res) => {
-    SupplierModel.find().exec().then(suppliers => {
-        res.json(suppliers);
+    SupplierModel.find().exec().then(supplierdata => {
+        res.json(supplierdata);
     }).catch(err => {
         console.error(err);
         res.sendStatus(500);
@@ -23,8 +23,8 @@ Router.get('/', (req, res) => {
 });
 
 Router.get('/:id', (req, res) => {
-    SupplierModel.findById(req.params.id).exec().then(supplier => {
-        res.json(supplier || {});
+    SupplierModel.find({"_id":req.params.id}).exec().then(supplierdataspecific => {
+        res.json(supplierdataspecific);
     }).catch(err => {
         console.error(err);
         res.sendStatus(500);
@@ -43,11 +43,14 @@ Router.post('/', (req, res) => {
 });
 
 Router.put('/:id', (req, res) => {
-    const supplier = req.body;
-    delete supplier._id;
+    const details = req.body;
+    delete details._id;
     const supplierId = req.params.id;
-    DriverModel.findByIdAndUpdate(supplierId, {$set: supplier}).then(supplierDb => {
-        res.json(supplier);
+    SupplierModel.update({_id:req.params.id}, {$set: details}).then(supplierupdate => {
+        console.log("sulier updateeeeeeeeeeeeeee");
+        console.log(req.body);
+        console.log(_id);
+        res.json(supplierupdate);
     }).catch(err => {
         console.error(err);
         res.sendStatus(500);
@@ -55,9 +58,10 @@ Router.put('/:id', (req, res) => {
 });
 
 Router.delete('/:id', (req, res) => {
-    SupplierModel.findByIdAndRemove(req.params.id).then((supplier) => {
-        return SupplierModel.remove({_id: {$in: supplierId}});
-    }).then(() => {
+    const details = req.body;
+    delete details._id;
+    const _id = req.params.id;
+    SupplierModel.remove({_id:req.params.id}).then(supplierdelete => {
         res.sendStatus(200);
     }).catch(err => {
         console.error(err);
