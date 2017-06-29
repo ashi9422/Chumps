@@ -12,6 +12,9 @@ const supplierRouter=require('./public/modules/supplier/supplier.route');
 require('./public/modules/stock/drugorder.model.js');
 const drugOrderRouter=require('./public/modules/stock/drugorder.route.js');
 
+require('./public/modules/ViewDispense/pres.model');
+const presRouter=require('./public/modules/ViewDispense/pres.route');
+
 
 const app = express();
 app.use(bodyParser.json());
