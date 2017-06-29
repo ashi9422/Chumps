@@ -50,10 +50,14 @@ mongoose.connect('mongodb://localhost:27017/chumps', err => {
 app.use('/newsup', supplierRouter);
 app.use('/newdrugorder',drugOrderRouter);
 
+
 app.use(express.static('public'));
 
 app.get('/', (req, res, next) => {
     res.sendFile(__dirname + '/index.html');
+});
+app.get('/login', (req, res, next) => {
+    res.sendFile(__dirname + '/login.html');
 });
 //
 //
