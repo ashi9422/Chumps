@@ -1,0 +1,45 @@
+<div  ng-controller="drugOrderController"  >
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Drug Orders</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+
+            <div>
+                <label>Search: <input ng-model="searchText" class="col-lg-pull-6" ></label>
+            </div>
+            <br>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Drug Name</th>
+                    <th>Quantity</th>
+                    <th>Supplier</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr ng-repeat="drugorderdata in drugorderdata  | filter:searchText">
+
+                    <td>{{drugorderdata.drugname}}</td>
+                    <td>{{drugorderdata.quantity}}</td>
+                    <td>{{drugorderdata.supplier}}</td>
+                    <td>{{drugorderdata.orderdate}}</td>
+                    <td>{{drugorderdata.status}}</td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/drugorderview/{{drugorderdata._id}}" ng-click="getdrugorder(drugorderdata._id)"><i class="fa fa-edit fa-2x" title="Edit Drug Order"></i></a></td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/drugorderview/{{drugorderdata._id}}" ng-click="getdrugorder(drugorderdata._id)"><i class="fa fa-trash fa-2x" title="Delete Drug Order"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

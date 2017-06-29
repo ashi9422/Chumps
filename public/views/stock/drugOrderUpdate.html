@@ -1,60 +1,65 @@
 <div class="x_panel">
     <div class="x_title">
-        <h2>Supplier update</h2>
+        <h2>Drugs Orders update</h2>
         <div class="clearfix"></div>
     </div>
-    <div class="x_content"  ng-controller="supplierController">
+    <div class="x_content"  ng-controller="drugOrderController">
         <br />
         <form id="demo-form2"   data-parsley-validate class="form-horizontal form-label-left">
             <div class="form-group">
                 <div class="alert alert-danger alert-dismissable" ng-show="myfalse">
-                    <strong>{{getsupsucessmsg}}</strong>
+                    <strong>{{getdrugordersucessmsg}}</strong>
                 </div>
                 <div class="alert alert-success alert-dismissable" ng-show="mytrue">
-                    <strong>{{getsupsucessmsg}}</strong>
+                    <strong>{{getdrugordersucessmsg}}</strong>
                 </div>
             </div>
             <div ng-show="error" class="text-danger">
                 <strong ng-bind="error">{{getsucessmsg}}</strong>
             </div>
             <!--<div class="form-group">-->
-                <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">ID-->
-                <!--</label>-->
-                <!--<div class="col-md-6 col-sm-6 col-xs-12" >-->
-                    <!--<input type="text" id="id" name="id" required="required" class="form-control col-md-7 col-xs-12"  ng-model="req.params.id">-->
-                <!--</div>-->
+            <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">ID-->
+            <!--</label>-->
+            <!--<div class="col-md-6 col-sm-6 col-xs-12" >-->
+            <!--<input type="text" id="id" name="id" required="required" class="form-control col-md-7 col-xs-12"  ng-model="req.params.id">-->
+            <!--</div>-->
             <!--</div>-->
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="drugname">Drug Name <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="drugname" name="drugname" required="required" class="form-control col-md-7 col-xs-12"  ng-model="supplierdataspecific.drugname">
+                    <input type="text" id="drugname" name="drugname" required="required" class="form-control col-md-7 col-xs-12"  ng-model="drugorderdataspecific.drugname">
                 </div>
             </div>
             <div class="form-group">
-                <label for="quantity" class="control-label col-md-3 col-sm-3 col-xs-12">Quantity <span class="required">*</span> </label>
+                <label for="quantity" class="control-label col-md-3 col-sm-3 col-xs-12">Quantity<span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="quantity" class="form-control col-md-7 col-xs-12" type="number" required="required" name="quantity"   ng-model="supplierdataspecific.quantity">
+                    <input id="quantity" class="form-control col-md-7 col-xs-12" type="number" min="0" required="required" name="quantity"   ng-model="drugorderdataspecific.quantity">
                 </div>
             </div>
             <div class="form-group">
                 <label for="supplier" class="control-label col-md-3 col-sm-3 col-xs-12"> Supplier <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="supplier"  class="form-control col-md-7 col-xs-12" type="text" name="supplier" required="required" ng-model="supplierdataspecific.supplier">
+                    <input id="supplier" class="form-control col-md-7 col-xs-12" type="text" name="supplier" required="required" ng-model="drugorderdataspecific.supplier">
                 </div>
             </div>
             <div class="form-group">
-                <label for="orderdate" class="control-label col-md-3 col-sm-3 col-xs-12">Order Date <span class="required">*</span></label>
+                <label for="orderdate" class="control-label col-md-3 col-sm-3 col-xs-12">Order Date <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="orderdate" class="form-control col-md-7 col-xs-12" type="date" name="orderdate" required="required"  ng-model="supplierdataspecific.orderdate" >
+                    <input id="orderdate" class="form-control col-md-7 col-xs-12" type="text" name="orderdate" required="required" ng-model="drugorderdataspecific.orderdate" >
                 </div>
             </div>
             <div class="form-group">
-                <label for="status" class="control-label col-md-3 col-sm-3 col-xs-12">Status <span class="required">*</span> </label>
+                <label for="status" class="control-label col-md-3 col-sm-3 col-xs-12"> Status <span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="status" class="form-control col-md-7 col-xs-12" type="text" name="status" required="required" ng-model="supplierdataspecific.status" >
+                    <!--<input id="email" class="form-control col-md-7 col-xs-12" type="status" name="status" required="required"  ng-model="drugorderdataspecific.status" >-->
+                    <select id="status" class="form-control col-md-7 col-xs-12"  name="status" ng-model="drugorderdataspecific.status" title="This Field is required" required="required">
+                        <option>accepted</option>
+                        <option>pending</option>
+                    </select>
                 </div>
             </div>
+
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

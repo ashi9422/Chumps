@@ -67,6 +67,12 @@
 
                 </ul>
               </li>
+              <li><a><i class="fa fa-inbox"></i> Stock <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="#!/adddrugorder">Add Drug Orders</a></li>
+                  <li><a href="#!/viewdrugorder">View Drug Orders</a></li>
+                </ul>
+              </li>
               <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                   <li><a href="form.html">General Form</a></li>
@@ -90,13 +96,7 @@
                   <li><a href="calendar.html">Calendar</a></li>
                 </ul>
               </li>
-              <li><a><i class="fa fa-inbox"></i> Stock <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                  <li><a href="#!/stocks">Stock View</a></li>
-                  <li><a href="#!/tempstock">Temporary Stock</a></li>
-                  <li><a href="#!/stockmovement">Stock Movement</a></li>
-                </ul>
-              </li>
+
               <li><a><i class="fa fa-bar-chart-o"></i> Sales <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                   <li><a href="#!/invoice">Invoice</a></li>
@@ -279,8 +279,9 @@
 <script type="text/javascript" src="controllers/module.js"></script>
 <script type="text/javascript" src="controllers/routes.js"></script>
 
-
+<!--controllers-->
 <script type="text/javascript" src="controllers/supplier/supplierController.js"></script>
+<script type="text/javascript" src="controllers/stock/drugOrderController.js"></script>
 
 
 </body>

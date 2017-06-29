@@ -24,7 +24,7 @@ const DrugOrderSchema = new Schema ({
     },
 
     orderdate: {
-        type: String,
+        type: Date,
         required: true
     },
     status: {

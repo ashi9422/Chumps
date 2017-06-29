@@ -98,7 +98,7 @@ angular.module("myApp").controller('supplierController',['$scope','$http','$rout
             $scope.supplier = success.data[0];
             $scope.getsupsucessmsg ='Successfully';
             $scope.showAlert();
-            $location.path('/suppliersview');
+            $location.path('');
         }, function (error) {
             $scope.getsupsucessmsg ='Something Went Wrong!!!!';
             $scope.showAlert();

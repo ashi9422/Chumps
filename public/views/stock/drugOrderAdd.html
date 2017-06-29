@@ -1,0 +1,85 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Drug Order Add</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content"  ng-controller="drugOrderController">
+        <br />
+        <form id="demo-form2" ng-submit="insertdrugorderdata()"  data-parsley-validate class="form-horizontal form-label-left">
+            <div class="form-group">
+                <div class="alert alert-danger alert-dismissable" ng-show="myfalse">
+                    <strong>{{getdrugordersucessmsg}}</strong>
+                </div>
+                <div class="alert alert-success alert-dismissable" ng-show="mytrue">
+                    <strong>{{getdrugordersucessmsg}}</strong>
+                </div>
+            </div>
+            <div ng-show="error" class="text-danger">
+                <strong ng-bind="error">{{getsucessmsg}}</strong>
+            </div>
+            <div class="form-group" hidden>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="_id"> ID
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="_id" name="_id" required="required" readonly class="form-control col-md-7 col-xs-12" ng-model="_id">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="drugname">Drug Name <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="drugname" name="drugname" required="required" class="form-control col-md-7 col-xs-12" ng-model="drugname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity" class="control-label col-md-3 col-sm-3 col-xs-12">Quantity <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="quantity" min="0" class="form-control col-md-7 col-xs-12" type="number" name="quantity" ng-model="quantity" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="supplier" class="control-label col-md-3 col-sm-3 col-xs-12">Supplier <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="supplier" class="form-control col-md-7 col-xs-12" type="text" name="supplier" ng-model="supplier" required="required">
+                </div>
+            </div>
+            <!--to test another controller-->
+            <!--<div class="form-group" >-->
+                <!--<label for="supplier" class="control-label col-md-3 col-sm-3 col-xs-12">Supplier <span class="required">*</span> </label>-->
+                <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
+                    <!--&lt;!&ndash;<input id="suppliera" class="form-control col-md-7 col-xs-12" type="text" name="suppliera" ng-model="suppliera" required="required">&ndash;&gt;-->
+                    <!--<select id="supplier" ng-options="supdata.firstname for supdata in supplierdata" class="form-control col-md-7 col-xs-12" name="supplier" ng-model="supplier" required="required">-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <div class="form-group">
+                <label for="orderdate" class="control-label col-md-3 col-sm-3 col-xs-12">Order Date </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="orderdate" class="form-control col-md-7 col-xs-12" type="date" name="orderdate" ng-model="orderdate" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status" class="control-label col-md-3 col-sm-3 col-xs-12"> Status <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!--<input id="status" class="form-control col-md-7 col-xs-12" type="text" name="status" ng-model="status" required="required">-->
+                    <select id="status" class="form-control col-md-7 col-xs-<12"  name="status" ng-model="status" title="This Field is required" required="required">
+                        <option>accepted</option>
+                        <option>pending</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-danger" type="button" >Cancel</button>
+                    <button class="btn btn-info" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
