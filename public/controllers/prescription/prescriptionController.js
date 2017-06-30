@@ -16,7 +16,9 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
                 'patientid': $scope.patientid,
                 'name': $scope.name,
                 'age': $scope.age,
-                'date': $scope.date
+                'date': $scope.date,
+                'drugs': $scope.drugs
+
             }
         }).then(function (success) {
             $scope.prescription = success.data;
@@ -68,7 +70,8 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
                 'patientid': $scope.prescriptiondataspecific.patientid,
                 'name': $scope.prescriptiondataspecific.name,
                 'age': $scope.prescriptiondataspecific.age,
-                'date': $scope.prescriptiondataspecific.date
+                'date': $scope.prescriptiondataspecific.date,
+                'drugs':$scope.prescriptiondataspecific.drugs
             }
         }).then(function (success) {
             $scope.prescription = success.data[0];
@@ -92,7 +95,8 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
                 'patientid': $scope.patientid,
                 'name': $scope.name,
                 'age': $scope.age,
-                'date': $scope.date
+                'date': $scope.date,
+                'drugs':$scope.drugs
             }
         }).then(function (success) {
             $scope.prescription = success.data[0];

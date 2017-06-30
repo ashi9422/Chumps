@@ -21,6 +21,7 @@
                     <th>Patient Name</th>
                     <th>Age</th>
                     <th>Date</th>
+                    <th>Drugs</th>
                     <th>Edit</th>
                     <th>Delete</th>
 
@@ -36,6 +37,7 @@
                     <td>{{prescriptiondata.name}}</td>
                     <td>{{prescriptiondata.age}}</td>
                     <td>{{prescriptiondata.date}}</td>
+                    <td>{{prescriptiondata.drugs}}</td>
                     <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionview/{{prescriptiondata._id}}" ng-click="getprescription(prescriptiondata._id)"><i class="fa fa-edit fa-2x" title="Edit Prescription"></i></a></td>
                     <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionview/{{prescriptiondata._id}}" ng-click="getprescription(prescriptiondata._id)"><i class="fa fa-trash fa-2x" title="Delete Prescription"></i></a></td>
                 </tr>
