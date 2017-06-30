@@ -1,0 +1,91 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Invoice Add</h2>
+        <div class="clearfix"></div>
+    </div>
+    <button class="btn btn-primary pull-right"><i class="fa fa-eye"></i><a ng-href="#!/viewinvoice" style="color: white"> View Invoices</a></button>
+    <div class="x_content"  ng-controller="invoiceController">
+        <br />
+        <form id="demo-form2" ng-submit="insertinvoicedata()"  data-parsley-validate class="form-horizontal form-label-left">
+            <div class="form-group">
+                <div class="alert alert-danger alert-dismissable" ng-show="myfalse">
+                    <strong>{{getinvoicesucessmsg}}</strong>
+                </div>
+                <div class="alert alert-success alert-dismissable" ng-show="mytrue">
+                    <strong>{{getinvoicesucessmsg}}</strong>
+                </div>
+            </div>
+            <div ng-show="error" class="text-danger">
+                <strong ng-bind="error">{{getsucessmsg}}</strong>
+            </div>
+            <!--<div class="form-group" hidden>-->
+                <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="_id"> ID-->
+                <!--</label>-->
+                <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
+                    <!--<input type="text" id="_id" name="_id" required="required" readonly class="form-control col-md-7 col-xs-12" ng-model="_id">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="InvoiceNo">Invoice No <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="InvoiceNo" name="InvoiceNo" required="required" class="form-control col-md-7 col-xs-12" ng-model="InvoiceNo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="PatientName">Patient name<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="PatientName" name="PatientName" required="required" class="form-control col-md-7 col-xs-12" ng-model="PatientName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="PatientTelephone" class="control-label col-md-3 col-sm-3 col-xs-12">Contact No</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="PatientTelephone" class="form-control col-md-7 col-xs-12" type="text" name="PatientTelephone"required="required"  ng-model="PatientTelephone">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Date" class="control-label col-md-3 col-sm-3 col-xs-12">Date</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="Date" class="form-control col-md-7 col-xs-12" type="date" name="Date" required="required"  ng-model="Date">
+                    <script>document.getElementById("Date").value = new Date().toJSON().slice(0,10)</script>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Time" class="control-label col-md-3 col-sm-3 col-xs-12">Time</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="Time" class="form-control col-md-7 col-xs-12" type="time" name="Time"required="required"  ng-model="Time">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Amount" class="control-label col-md-3 col-sm-3 col-xs-12">Amount</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="Amount" class="form-control col-md-7 col-xs-12" type="text"required="required"  name="Amount" ng-model="Amount">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Status" class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <select id="Status" class="form-control col-md-7 col-xs-12" type="text"required="required"  name="Status" ng-model="Status">
+                        <option value="Paid">Paid</option>
+                        <option value="notpaid">Not Paid</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-danger" type="button" >Cancel</button>
+                    <button class="btn btn-info" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

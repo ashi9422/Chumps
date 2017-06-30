@@ -21,6 +21,9 @@ const drugRouter=require('./public/modules/drug/drug.route');
 require('./public/modules/prescription/prescription.model');
 const prescreptionRouter=require('./public/modules/prescription/prescription.route');
 
+require('./public/modules/invoice/invoice.model');
+const invoiceRouter=require('./public/modules/invoice/invoice.route');
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -57,6 +60,7 @@ app.use('/newsup', supplierRouter);
 app.use('/newdrugorder',drugOrderRouter);
 app.use('/newprescription',prescreptionRouter);
 app.use('/newdrug',drugRouter);
+app.use('/newinvoice',invoiceRouter);
 
 
 
