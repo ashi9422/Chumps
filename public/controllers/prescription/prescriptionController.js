@@ -1,23 +1,23 @@
 'use strict'
 
-angular.module("myApp").controller('supplierController',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
+angular.module("myApp").controller('prescriptionController',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
 
     $scope.insertsupdata=function () {
         $http({
             method: 'POST',
-            url: 'http://localhost:3000/newsup',
+            url: 'http://localhost:3000/newprescription',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: {
-                'firstname': $scope.firstname,
-                'lastname': $scope.lastname,
-                'phone': $scope.phone,
-                'email': $scope.email,
-                'address': $scope.address
+                'doctorid': $scope.doctorid,
+                'patientid': $scope.patientid,
+                'name': $scope.name,
+                'age': $scope.age,
+                'date': $scope.date
             }
         }).then(function (success) {
-            $scope.supplier = success.data;
+            $scope.prescription = success.data;
             $scope.getsupsucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {
@@ -40,7 +40,7 @@ angular.module("myApp").controller('supplierController',['$scope','$http','$rout
         method: 'GET',
         url: 'http://localhost:3000/newsup'
     }).then(function (success){
-        $scope.supplierdata=success.data;
+        $scope.prescriptiondata=success.data;
     },function (error){
 
     });
