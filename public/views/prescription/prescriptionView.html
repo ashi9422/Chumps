@@ -1,7 +1,7 @@
-<div  ng-controller="supplierController"  >
+<div  ng-controller="prescriptionController"  >
     <div class="x_panel">
         <div class="x_title">
-            <h2> Suppliers </h2>
+            <h2>Prescription Table</h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
@@ -9,18 +9,17 @@
 
             <div>
                 <label>Search: <input ng-model="searchText" class="col-lg-pull-6" ></label>
-                <button class="btn btn-info pull-right"><i class="fa fa-user"></i><a ng-href="#!/addsupplier" style="color: white"> Add Supplier</a></button>
             </div>
             <br>
 
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone</th>
-                    <th>email</th>
-                    <th>address</th>
+                    <th>Doctor ID</th>
+                    <th>Patient IDL</th>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Date</th>
                     <th>Edit</th>
                     <th>Delete</th>
 
@@ -29,15 +28,15 @@
 
                 <tbody>
 
-                <tr ng-repeat="supdata in supplierdata  | filter:searchText">
+                <tr ng-repeat="presdata in prescriptiondata  | filter:searchText">
 
-                    <td>{{supdata.firstname}}</td>
-                    <td>{{supdata.lastname}}</td>
-                    <td>{{supdata.phone}}</td>
-                    <td>{{supdata.email}}</td>
-                    <td>{{supdata.address}}</td>
-                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/suppliersview/{{supdata._id}}" ng-click="getsup(supdata._id)"><i class="fa fa-edit fa-2x" title="Edit Supplier"></i></a></td>
-                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/suppliersview/{{supdata._id}}" ng-click="getsup(supdata._id)"><i class="fa fa-trash fa-2x" title="Delete Supplier"></i></a></td>
+                    <td>{{presdata.doctorid}}</td>
+                    <td>{{presdata.patientid}}</td>
+                    <td>{{presdata.name}}</td>
+                    <td>{{presdata.age}}</td>
+                    <td>{{presdata.date}}</td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionView/{{presdata._id}}" ng-click="getpres(presdata._id)"><i class="fa fa-edit fa-2x" title="Edit Prescription"></i></a></td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionView/{{presdata._id}}" ng-click="getpres(presdata._id)"><i class="fa fa-trash fa-2x" title="Delete Prescription"></i></a></td>
                 </tr>
                 </tbody>
             </table>
