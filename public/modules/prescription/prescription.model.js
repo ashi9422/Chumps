@@ -14,11 +14,11 @@ const PrescriptionSchema = new Schema ({
         required: true
     },
     name: {
-        type: Number,
+        type: String,
         required: true
     },
     age: {
-        type: String,
+        type: Number,
         required: true
     },
     date: {

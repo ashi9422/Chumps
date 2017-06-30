@@ -3,27 +3,28 @@
         <h2>Prescription Add</h2>
         <div class="clearfix"></div>
     </div>
+    <button class="btn btn-primary pull-right"><i class="fa fa-eye"></i><a ng-href="#!/viewprescription" style="color: white"> View Prescriptions</a></button>
     <div class="x_content"  ng-controller="prescriptionController">
         <br />
-        <form id="demo-form2" ng-submit="insertpresdata()"  data-parsley-validate class="form-horizontal form-label-left">
+        <form id="demo-form2" ng-submit="insertprescriptiondata()"  data-parsley-validate class="form-horizontal form-label-left">
             <div class="form-group">
                 <div class="alert alert-danger alert-dismissable" ng-show="myfalse">
-                    <strong>{{getpressucessmsg}}</strong>
+                    <strong>{{getprescriptionsucessmsg}}</strong>
                 </div>
                 <div class="alert alert-success alert-dismissable" ng-show="mytrue">
-                   <strong>{{getpressucessmsg}}</strong>
+                   <strong>{{getprescriptionsucessmsg}}</strong>
                 </div>
             </div>
             <div ng-show="error" class="text-danger">
                 <strong ng-bind="error">{{getsucessmsg}}</strong>
             </div>
-            <div class="form-group" hidden>
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="_id"> ID
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="_id" name="_id" required="required" readonly class="form-control col-md-7 col-xs-12" ng-model="_id">
-                </div>
-            </div>
+            <!--<div class="form-group" hidden>-->
+                <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="_id"> ID-->
+                <!--</label>-->
+                <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
+                    <!--<input type="text" id="_id" name="_id" required="required" readonly class="form-control col-md-7 col-xs-12" ng-model="_id">-->
+                <!--</div>-->
+            <!--</div>-->
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="doctorid">Doctor ID <span class="required">*</span>
                 </label>
@@ -46,13 +47,13 @@
             <div class="form-group">
                 <label for="age" class="control-label col-md-3 col-sm-3 col-xs-12"> Age <span class="required">*</span> </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="age" class="form-control col-md-7 col-xs-12" type="text" name="age" ng-model="age" required="required">
+                    <input id="age" class="form-control col-md-7 col-xs-12" type="number" name="age" ng-model="age" required="required">
                 </div>
             </div>
             <div class="form-group">
                 <label for="date" class="control-label col-md-3 col-sm-3 col-xs-12">Date </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input id="date" class="form-control col-md-7 col-xs-12" type="text" name="date" ng-model="date" required="required">
+                    <input id="date" class="form-control col-md-7 col-xs-12" type="date" name="date" ng-model="date" required="required">
                 </div>
             </div>
             <div class="ln_solid"></div>

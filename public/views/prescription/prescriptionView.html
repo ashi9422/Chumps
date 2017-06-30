@@ -9,6 +9,7 @@
 
             <div>
                 <label>Search: <input ng-model="searchText" class="col-lg-pull-6" ></label>
+                <button class="btn btn-info pull-right"><i class="fa fa-user"></i><a ng-href="#!/addprescription" style="color: white"> Add Prescriptions </a></button>
             </div>
             <br>
 
@@ -28,15 +29,15 @@
 
                 <tbody>
 
-                <tr ng-repeat="presdata in prescriptiondata  | filter:searchText">
+                <tr ng-repeat="prescriptiondata in prescriptiondata  | filter:searchText">
 
-                    <td>{{presdata.doctorid}}</td>
-                    <td>{{presdata.patientid}}</td>
-                    <td>{{presdata.name}}</td>
-                    <td>{{presdata.age}}</td>
-                    <td>{{presdata.date}}</td>
-                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionView/{{presdata._id}}" ng-click="getpres(presdata._id)"><i class="fa fa-edit fa-2x" title="Edit Prescription"></i></a></td>
-                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionView/{{presdata._id}}" ng-click="getpres(presdata._id)"><i class="fa fa-trash fa-2x" title="Delete Prescription"></i></a></td>
+                    <td>{{prescriptiondata.doctorid}}</td>
+                    <td>{{prescriptiondata.patientid}}</td>
+                    <td>{{prescriptiondata.name}}</td>
+                    <td>{{prescriptiondata.age}}</td>
+                    <td>{{prescriptiondata.date}}</td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionview/{{prescriptiondata._id}}" ng-click="getprescription(prescriptiondata._id)"><i class="fa fa-edit fa-2x" title="Edit Prescription"></i></a></td>
+                    <td align="center" style="text-decoration: underline;"><a ng-href="#!/prescriptionview/{{prescriptiondata._id}}" ng-click="getprescription(prescriptiondata._id)"><i class="fa fa-trash fa-2x" title="Delete Prescription"></i></a></td>
                 </tr>
                 </tbody>
             </table>

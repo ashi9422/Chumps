@@ -20,7 +20,7 @@ Router.get('/', (req, res) => {
 });
 
 Router.get('/:id', (req, res) => {
-    PrescriptionModel.find({"_id":req.params.id}).exec().then(pescriptiondataspecific => {
+    PrescriptionModel.find({"_id":req.params.id}).exec().then(prescriptiondataspecific => {
         res.json(prescriptiondataspecific);
     }).catch(err => {
         console.error(err);

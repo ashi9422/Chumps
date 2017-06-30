@@ -1,8 +1,10 @@
-'use strict'
+/**
+ * Created by ashani on 5/7/2017.
+ */
 
 angular.module("myApp").controller('prescriptionController',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
 
-    $scope.insertsupdata=function () {
+    $scope.insertprescriptiondata=function () {
         $http({
             method: 'POST',
             url: 'http://localhost:3000/newprescription',
@@ -18,10 +20,10 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
             }
         }).then(function (success) {
             $scope.prescription = success.data;
-            $scope.getsupsucessmsg ='Successfully';
+            $scope.getprescriptionsucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {
-            $scope.getsupsucessmsg ='Something Went Wrong!!!!';
+            $scope.getprescriptionsucessmsg ='Something Went Wrong!!!!';
             $scope.showAlert();
         });
     };
@@ -29,16 +31,16 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
     $scope.showAlert = function(){
         $scope.mytrue = false;
         $scope.myfalse = false;
-        console.log($scope.getsupsucessmsg);
-        if($scope.getsupsucessmsg=="Successfully")
+        console.log($scope.getprescriptionsucessmsg);
+        if($scope.getprescriptionsucessmsg=="Successfully")
             $scope.mytrue = true;
-        else if($scope.getsupsucessmsg=="Something Went Wrong!!!!")
+        else if($scope.getprescriptionsucessmsg=="Something Went Wrong!!!!")
             $scope.myfalse = true;
     };
 
     $http({
         method: 'GET',
-        url: 'http://localhost:3000/newsup'
+        url: 'http://localhost:3000/newprescription'
     }).then(function (success){
         $scope.prescriptiondata=success.data;
     },function (error){
@@ -47,9 +49,9 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
 
     $http({
         method: 'GET',
-        url: 'http://localhost:3000/newsup/'+$routeParams.id
+        url: 'http://localhost:3000/newprescription/'+$routeParams.id
     }).then(function (success) {
-        $scope.supplierdataspecific = success.data[0];
+        $scope.prescriptiondataspecific = success.data[0];
     }, function (error) {
 
     });
@@ -57,23 +59,23 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
     $scope.updatedata=function () {
         $http({
             method: 'PUT',
-            url: 'http://localhost:3000/newsup/'+$routeParams.id,
+            url: 'http://localhost:3000/newprescription/'+$routeParams.id,
             headers: {
                 'Content-Type': 'application/json'
             },
             data: {
-                'firstname': $scope.supplierdataspecific.firstname,
-                'lastname': $scope.supplierdataspecific.lastname,
-                'phone': $scope.supplierdataspecific.phone,
-                'email': $scope.supplierdataspecific.email,
-                'address': $scope.supplierdataspecific.address
+                'doctorid': $scope.prescriptiondataspecific.doctorid,
+                'patientid': $scope.prescriptiondataspecific.patientid,
+                'name': $scope.prescriptiondataspecific.name,
+                'age': $scope.prescriptiondataspecific.age,
+                'date': $scope.prescriptiondataspecific.date
             }
         }).then(function (success) {
-            $scope.supplier = success.data[0];
-            $scope.getsupsucessmsg ='Successfully';
+            $scope.prescription = success.data[0];
+            $scope.getprescriptionsucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {
-            $scope.getsupsucessmsg ='Something went wrong';
+            $scope.getprescriptionsucessmsg ='Something went wrong';
             $scope.showAlert();
         });
     };
@@ -81,24 +83,24 @@ angular.module("myApp").controller('prescriptionController',['$scope','$http','$
     $scope.deletedata=function () {
         $http({
             method: 'DELETE',
-            url: 'http://localhost:3000/newsup/'+$routeParams.id,
+            url: 'http://localhost:3000/newprescription/'+$routeParams.id,
             headers: {
                 'Content-Type': 'application/json'
             },
             data: {
-                'firstname': $scope.firstname,
-                'lastname': $scope.lastname,
-                'phone': $scope.phone,
-                'email': $scope.email,
-                'address': $scope.address
+                'doctorid': $scope.doctorid,
+                'patientid': $scope.patientid,
+                'name': $scope.name,
+                'age': $scope.age,
+                'date': $scope.date
             }
         }).then(function (success) {
-            $scope.supplier = success.data[0];
-            $scope.getsupsucessmsg ='Successfully';
+            $scope.prescription = success.data[0];
+            $scope.getprescriptionsucessmsg ='Successfully';
             $scope.showAlert();
-            $location.path('/viewsuppliers');
+            $location.path('/viewprescription');
         }, function (error) {
-            $scope.getsupsucessmsg ='Something Went Wrong!!!!';
+            $scope.getprescriptionsucessmsg ='Something Went Wrong!!!!';
             $scope.showAlert();
         });
     };

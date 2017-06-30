@@ -45,7 +45,7 @@ angular.module("myApp").config(function($routeProvider) {
         .when("/prescriptionview/:id", {
             templateUrl : "views/prescription/prescriptionUpdate.html"
         })
-        .when("/viewprescriptions", {
+        .when("/viewprescription", {
             templateUrl : "views/prescription/prescriptionView.html"
         })
         .when("/prescriptionadd", {

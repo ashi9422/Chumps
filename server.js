@@ -55,7 +55,9 @@ mongoose.connect('mongodb://localhost:27017/chumps', err => {
 
 app.use('/newsup', supplierRouter);
 app.use('/newdrugorder',drugOrderRouter);
+app.use('/newprescription',prescreptionRouter);
 app.use('/newdrug',drugRouter);
+
 
 
 app.use(express.static('public'));
