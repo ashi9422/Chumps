@@ -15,6 +15,9 @@ const drugOrderRouter=require('./public/modules/stock/drugorder.route.js');
 require('./public/modules/ViewDispense/pres.model');
 const presRouter=require('./public/modules/ViewDispense/pres.route');
 
+require('./public/modules/prescription/prescription.model');
+const prescreptionRouter=require('./public/modules/prescription/prescription.route');
+
 
 const app = express();
 app.use(bodyParser.json());

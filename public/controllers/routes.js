@@ -27,6 +27,18 @@ angular.module("myApp").config(function($routeProvider) {
         .when("/drugorderadd", {
             templateUrl : "views/stock/drugOrderAdd.html"
         })
+        .when("/addprescription", {
+            templateUrl : "views/prescription/prescriptionAdd.html"
+        })
+        .when("/prescriptionview/:id", {
+            templateUrl : "views/prescription/prescriptionUpdate.html"
+        })
+        .when("/viewprescriptions", {
+            templateUrl : "views/prescription/prescriptionView.html"
+        })
+        .when("/prescriptionadd", {
+            templateUrl : "views/prescription/prescriptionAdd.html"
+        })
         .otherwise({
             template : "http://localhost:3000"
         });
