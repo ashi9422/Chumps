@@ -25,6 +25,18 @@ angular.module("myApp").config(function($routeProvider) {
             templateUrl : "views/stock/drugOrderView.html"
         })
         .when("/drugorderadd", {
+            templateUrl : "views/drug/drugAdd.html"
+        })
+        .when("/adddrug", {
+            templateUrl : "views/drug/drugAdd.html"
+        })
+        .when("/drugview/:id", {
+            templateUrl : "views/drug/drugUpdate.html"
+        })
+        .when("/viewdrug", {
+            templateUrl : "views/drug/drugView.html"
+        })
+        .when("/drugadd", {
             templateUrl : "views/stock/drugOrderAdd.html"
         })
         .when("/addprescription", {

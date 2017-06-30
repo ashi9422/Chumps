@@ -1,0 +1,89 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Drugs update</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content"  ng-controller="drugController">
+        <br />
+        <button class="btn btn-primary pull-right"><i class="fa fa-eye"></i><a ng-href="#!/viewdrug" style="color: white"> View Drug </a></button>
+        <form id="demo-form2"   data-parsley-validate class="form-horizontal form-label-left">
+            <div class="form-group">
+                <div class="alert alert-danger alert-dismissable" ng-show="myfalse">
+                    <strong>{{getdrugsucessmsg}}</strong>
+                </div>
+                <div class="alert alert-success alert-dismissable" ng-show="mytrue">
+                    <strong>{{getdrugsucessmsg}}</strong>
+                </div>
+            </div>
+            <div ng-show="error" class="text-danger">
+                <strong ng-bind="error">{{getsucessmsg}}</strong>
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">ID-->
+            <!--</label>-->
+            <!--<div class="col-md-6 col-sm-6 col-xs-12" >-->
+            <!--<input type="text" id="id" name="id" required="required" class="form-control col-md-7 col-xs-12"  ng-model="req.params.id">-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="itemName">Item Name <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="itemName" name="itemName" required="required" class="form-control col-md-7 col-xs-12"  ng-model="drugdataspecific.itemName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="batchNo" class="control-label col-md-3 col-sm-3 col-xs-12">Batch No<span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="batchNo" class="form-control col-md-7 col-xs-12" type="number" min="0" required="required" name="batchNo"   ng-model="drugdataspecific.batchNo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="packingType" class="control-label col-md-3 col-sm-3 col-xs-12"> Packing Type <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="packingType" class="form-control col-md-7 col-xs-12" type="text" name="packingType" required="required" ng-model="drugdataspecific.packingType">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer" class="control-label col-md-3 col-sm-3 col-xs-12">Manufacturer <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="manufacturer" class="form-control col-md-7 col-xs-12" type="text" name="manufacturer" required="required" ng-model="drugdataspecific.manufacturer" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity" class="control-label col-md-3 col-sm-3 col-xs-12"> Quantity <span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="quantity" class="form-control col-md-7 col-xs-12" type="number" name="quantity" required="required"  ng-model="drugdataspecific.quantity" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="addedDate" class="control-label col-md-3 col-sm-3 col-xs-12"> Added Date <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="addedDate" class="form-control col-md-7 col-xs-12" type="text" name="addedDate" required="required" ng-model="drugdataspecific.addedDate">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate" class="control-label col-md-3 col-sm-3 col-xs-12">Expiry Date <span class="required">*</span> </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="expiryDate" class="form-control col-md-7 col-xs-12" type="text" name="expiryDate" required="required" ng-model="drugdataspecific.expiryDate" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sellingPrice" class="control-label col-md-3 col-sm-3 col-xs-12"> Selling Price <span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="sellingPrice" class="form-control col-md-7 col-xs-12" type="number" name="sellingPrice" required="required"  ng-model="drugdataspecific.sellingPrice" >
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-primary" type="button" >Cancel</button>
+                    <button type="submit" ng-click="updatedata()" class="btn btn-success">Update</button>
+                    <button type="button" ng-click="deletedata()" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

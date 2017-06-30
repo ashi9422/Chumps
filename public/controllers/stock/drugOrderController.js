@@ -24,7 +24,7 @@ angular.module("myApp").controller('drugOrderController',['$scope','$http','$rou
             $scope.getdrugordersucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {
-            $scope.getdrugorderucessmsg ='Something Went Wrong!!!!';
+            $scope.getdrugordersucessmsg ='Something Went Wrong!!!!';
             $scope.showAlert();
         });
     };
@@ -81,7 +81,7 @@ angular.module("myApp").controller('drugOrderController',['$scope','$http','$rou
                 'status': $scope.drugorderdataspecific.status
             }
         }).then(function (success) {
-            $scope.supplier = success.data[0];
+            $scope.drugorder = success.data[0];
             $scope.getdrugordersucessmsg ='Successfully';
             $scope.showAlert();
         }, function (error) {

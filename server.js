@@ -12,8 +12,11 @@ const supplierRouter=require('./public/modules/supplier/supplier.route');
 require('./public/modules/stock/drugorder.model.js');
 const drugOrderRouter=require('./public/modules/stock/drugorder.route.js');
 
-require('./public/modules/ViewDispense/pres.model');
-const presRouter=require('./public/modules/ViewDispense/pres.route');
+require('./public/modules/drug/drug.model');
+const drugRouter=require('./public/modules/drug/drug.route');
+
+// require('./public/modules/ViewDispense/pres.model');
+// const presRouter=require('./public/modules/ViewDispense/pres.route');
 
 require('./public/modules/prescription/prescription.model');
 const prescreptionRouter=require('./public/modules/prescription/prescription.route');
@@ -52,6 +55,7 @@ mongoose.connect('mongodb://localhost:27017/chumps', err => {
 
 app.use('/newsup', supplierRouter);
 app.use('/newdrugorder',drugOrderRouter);
+app.use('/newdrug',drugRouter);
 
 
 app.use(express.static('public'));
