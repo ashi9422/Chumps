@@ -75,15 +75,10 @@ app.get('/login', (req, res, next) => {
 // });
 
 
-/*app.listen(3000, function (err) {
+app.listen(3000, function (err) {
     if(err){
         console.log(err);
     }else {
         console.log("server listen on port 3000")
     }
-});*/
-var port = process.env.PORT || 8000
- 
-app.listen(port, function() {
-    console.log("App is running on port " + port);
 });
